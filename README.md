@@ -1,5 +1,5 @@
 # Microscope.... using USB-Camera  with Scale-Bar.
-I renewaled our lab old cameram software on Python. <p>
+I renewaled our lab old camera software on Python. <p>
 That function is.<p>
   &nbsp;&nbsp;(1) Harf size Viewer with Play//Pause.<p>
   &nbsp;&nbsp;(2) Selectable USB Camera.<p>
