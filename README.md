@@ -1,9 +1,9 @@
 # Microscope.... using USB-Camera  with Scale-Bar.
-I renewaled our lab old camera software on Python. <p>
+I renewaled old camera software in our lab. <p>
 That function is.<p>
   &nbsp;&nbsp;(1) Harf size Viewer with Play//Pause.<p>
   &nbsp;&nbsp;(2) Selectable USB Camera.<p>
-  &nbsp;&nbsp;(3) Available colored Scale-Bar movable to click.<p>
+  &nbsp;&nbsp;(3) Scale-Bar movable to click.<p>
 <p>
 Known issue is.<p>
   &nbsp;&nbsp;(1)　"get Camera profile" command is not working properly.  So, force write camera size.<p>
