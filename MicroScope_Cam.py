@@ -15,7 +15,7 @@ class Application(tk.Frame):
         self.master.title("MicroScope CMOS Camera Viewer(NY-CZ=0.35-0.7倍Zoom経由)")       # Window title
         self.master.geometry("1200x650")             # TK window size(width x height)
 
-        #Initialize view, camera
+        #Initialize view, from camera
         self.view_width  = 800
         self.view_height = 600
         self.view_magnify  = 1/2  # Camera to Picture ratio 2:1   
@@ -42,8 +42,8 @@ class Application(tk.Frame):
         self.show_scale  = True   # True= Show Scale    , False= Hide Scale 
         self.relaylens_magnify =0.7  # Zoom lens x0.35 -> x0.70
         self.lens_magnify   = 10.0   # Objective Lens x10 Default
-        self.str_length = '100um'
-        self.length = 100.0          # Scale length 
+        self.str_length = '100um'    # Scale length  100um Default
+        self.length = 100.0          # Scale length(um) 
         self.pixel_length = 4.2      # 4.2um/Pixel
         self.x0  = 150
         self.y0  = 50
@@ -59,7 +59,10 @@ class Application(tk.Frame):
         self.green = (0,255,0)
         self.black = (0,0,0)
         self.color = self.white
-
+        
+        #camera Open 
+        self.capture = cv2.VideoCapture(self.camera_id)
+        '''
         #camera Open 
         self.capture = cv2.VideoCapture(self.camera_id)
         self.frame_prf_0=self.capture.get(cv2.CAP_PROP_FRAME_WIDTH) # get camera profile
@@ -84,7 +87,7 @@ class Application(tk.Frame):
             self.view_magnify = self.view_magnify*self.view_height/self.view_y
             self.view_y = self.view_height
             self.view_x = int(self.view_height * aspect_ratio)
-
+        '''
 
         # frame1
         frame1 = tk.Frame(root, bd=2, pady=5, padx=5)
@@ -212,7 +215,7 @@ class Application(tk.Frame):
         if self.show_scale:
             #Text
             cv2.putText(img=frame, text=self.str_length, org=(self.x0-130, self.y0), fontFace=cv2.FONT_HERSHEY_SIMPLEX, 
-            fontScale=0.9, color=self.color, thickness=2, lineType=cv2.LINE_AA)
+            fontScale=0.9, color=self.color, thickness=2, lineType=cv2.LINE_AA)    # Font scale , thickness=2
 
             #Scale
             self.multi_factor = self.lens_magnify * self.relaylens_magnify
@@ -221,7 +224,7 @@ class Application(tk.Frame):
             length= int(pixels)
             x_loc = self.x0
             y_loc = self.y0
-            cv2.line(frame, (x_loc, y_loc), (x_loc+length, y_loc), self.color,thickness=2)
+            cv2.line(frame, (x_loc, y_loc), (x_loc+length, y_loc), self.color,thickness=2) # Line thickness =2
             cv2.line(frame, (x_loc, y_loc), (x_loc, y_loc-height), self.color,thickness=2)
             cv2.line(frame, (x_loc+length, y_loc), (x_loc+length, y_loc-height), self.color,thickness=2)
         else:
