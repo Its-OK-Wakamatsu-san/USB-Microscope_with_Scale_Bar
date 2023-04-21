@@ -1,6 +1,6 @@
 # Microscope.... using USB-Camera  with Scale-Bar.
-![MicroScope_camera_](https://user-images.githubusercontent.com/131073488/232638774-941036c1-b2d0-416e-9a37-8034ef27601f.jpg)
-
+![MicroScope_camera_](https://user-images.githubusercontent.com/131073488/232638774-941036c1-b2d0-416e-9a37-8034ef27601f.jpg)<p>
+Fig.1　MicroScope_Cam.py
 
 ## Overview
 **The microscope cam software is created in Python to show scale in the image viewer. This document is its usage notes.**. <p>
@@ -27,7 +27,8 @@
   (8)	Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like.
   (9)	Save still image: Push the button “Save Image File” to save in jpg file.
   ```
-![image](https://user-images.githubusercontent.com/131073488/233556724-e6c2a10e-677b-4085-80dd-c5d4ddb14891.png)
+  ![Driver](https://user-images.githubusercontent.com/131073488/233557365-10122650-103b-40a2-9279-da5d800b0f85.png) <p>
+    Fig. 2　Camera profile setting window
 
 ## Notes  
 You shall change these values to fit your camera.<p>
@@ -65,7 +66,6 @@ It is good to change these values to fit your monitor or lens. <p>
   ```
   (1)	Polarized light microscope
   https://www.microscope.healthcare.nikon.com/products/polarizing-microscopes/eclipse-lv100n-pol)
-  
   (2)	Field of View and Shooting Range of CCD Camera Adapter/Eyepiece for Microscope
   https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/View-Range.htm?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp
   (3)	How to attach a C-mount camera to the eyepiece
