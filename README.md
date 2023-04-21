@@ -1,6 +1,6 @@
 # Microscope.... using USB-Camera  with Scale-Bar.
 ![MicroScope_camera_](https://user-images.githubusercontent.com/131073488/232638774-941036c1-b2d0-416e-9a37-8034ef27601f.jpg)<p>
-Fig.1　MicroScope_Cam.py
+Fig.1　MicroScope_Cam_class101.py
 
 ## Overview
 **The microscope cam software is created in Python to show scale in the image viewer. This document is its usage notes.**. <p>
@@ -21,7 +21,7 @@ Fig.1　MicroScope_Cam.py
   (2) Start program: Click MicroScope_Cam.py to start program. A Pop-Up Window for camera connection appears, so press the OK button. Start live camera view.
   (3) Image View: Pressing the “Play//Pause” button, change into Still or Live image.
   (4) Focus: Adjust the focus of your microscope while looking at the Live image view.
-  (5) Exposure adjustment: Press the “Set Configuration” button. A function setting Pop Up Window appears. (Fig. 2-2 is our lab’s camera driver’s sample. Function is depend on your camera driver.) The exposure is set to Auto in the default. Auto-exposure images are not always good, and if they look slightly overexposed or underexposed, it's good to change the exposure manually to get a properly exposed image.
+  (5) Exposure adjustment: Press the “Set Configuration” button. A function setting Pop Up Window appears. (Fig. 2 is our lab’s camera driver’s sample. Function is depend on your camera driver.) The exposure is set to Auto in the default. Auto-exposure images are not always good, and if they look slightly overexposed or underexposed, it's good to change the exposure manually to get a properly exposed image.
   (6) Scale-Bar and Objective Lens: When changed Objective Lens, select lens from “Objective Lens tab” to fit, and press “Objective Lens” button.
   (7) Scale-Bar location: Move Scale-Bar where to mouse click.
   (8) Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like.
