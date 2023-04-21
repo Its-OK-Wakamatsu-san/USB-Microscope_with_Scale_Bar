@@ -27,7 +27,7 @@
   (8)	Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like.
   (9)	Save still image: Push the button “Save Image File” to save in jpg file.
   ```
-  ![image](https://user-images.githubusercontent.com/131073488/233554206-6e02814d-63de-4c26-b851-bc290ec56349.png)
+![image](https://user-images.githubusercontent.com/131073488/233556724-e6c2a10e-677b-4085-80dd-c5d4ddb14891.png)
 
 ## Notes  
 You shall change these values to fit your camera.<p>
@@ -58,10 +58,9 @@ It is good to change these values to fit your monitor or lens. <p>
   (4)	Regarding the display of video, referred to material(5)
   ```
 ## Known issue
-    ```
-   (1)　"get Camera profile" command is not working properly.  So, force write camera size.
-    ```
-    
+  ```
+  (1)　"get Camera profile" command is not working properly.  So, force write camera size.
+  ```
 ## Related materials
   ```
   (1)	Polarized light microscope
@@ -76,4 +75,3 @@ It is good to change these values to fit your monitor or lens. <p>
   (5)	Display OpenCV camera video on Canvas
   https://imagingsolution-net.translate.goog/program/python/tkinter/display_opencv_video_canvas/?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp <p>
    ```
-
