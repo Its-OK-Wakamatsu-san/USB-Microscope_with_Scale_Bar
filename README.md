@@ -47,7 +47,10 @@ It is good to change these values to fit your monitor or lens. <p>
 ## Development Environment
 ### Hardware Environment
   ```
-  (1) Camera: 1/2inch color CMOS, 1600x1200pixels, 4.2um/pixel, 10fps(max) (material(4))
+  (1) Camera: 1/2inch color CMOS, 
+              1600x1200pixels, 
+              4.2um/pixel, 
+              10fps(max) (material(4))
   (2) Relay Lens (Eyepiece): 0.7x (material(3))
   (3) Objective Lens: 5x, 10x, 20x, 50x, 100x (material(1))
   ```
