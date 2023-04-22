@@ -13,18 +13,18 @@ The microscope cam software is created in Python to show scale in the image view
 (6) Scale-Bar color: white, black, green, light blue, red <p>
 (7) Scale-Bar location: Move Scale-Bar where to mouse click. <p>
   (8) Save file: Save as jpg file.  <p>
-## Usage
-   ```
-  (1) Start PC: Start your PC.
-  (2) Start program: Click MicroScope_Cam.py to start program. A Pop-Up Window for camera connection appears, so press the OK button. Start live camera view.
-  (3) Image View: Pressing the “Play//Pause” button, change into Still or Live image.
-  (4) Focus: Adjust the focus of your microscope while looking at the Live image view.
-  (5) Exposure adjustment: Press the “Set Configuration” button. A function setting Pop Up Window appears. (Fig. 2 is our lab’s camera driver’s sample. Function is depend on your camera driver.) The exposure is set to Auto in the default. Auto-exposure images are not always good, and if they look slightly overexposed or underexposed, it's good to change the exposure manually to get a properly exposed image.
+#### Usage
+  (1) Start PC: Start your PC. <p>
+  (2) Start program: Click MicroScope_Cam.py to start program. A Pop-Up Window for camera connection appears, so press the OK button. Start live camera view. <p>
+  (3) Image View: Pressing the “Play//Pause” button, change into Still or Live image. <p>
+  (3) Image View: Pressing the “Play//Pause” button, change into Still or Live image. <p>
+  (4) Focus: Adjust the focus of your microscope while looking at the Live image view. <p>
+  (5) Exposure adjustment: Press the “Set Configuration” button. A function setting Pop Up Window appears. (Fig. 2 is our lab’s camera driver’s sample. Function is depend on your camera driver.) The exposure is set to Auto in the default. Auto-exposure images are not always good, and if they look slightly overexposed or underexposed, it's good to change the exposure manually to get a properly exposed image. <p>
   (6) Scale-Bar and Objective Lens: When changed Objective Lens, select lens from “Objective Lens tab” to fit, and press “Objective Lens” button.
-  (7) Scale-Bar location: Move Scale-Bar where to mouse click.
-  (8) Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like.
-  (9) Save still image: Push the button “Save Image File” to save in jpg file.
-  ```
+  (7) Scale-Bar location: Move Scale-Bar where to mouse click. <p>
+  (8) Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like. <p>
+  (9) Save still image: Push the button “Save Image File” to save in jpg file. <p>
+    
   ![Driver](https://user-images.githubusercontent.com/131073488/233557365-10122650-103b-40a2-9279-da5d800b0f85.png) <p>
     Fig. 2　Camera profile setting window
 
