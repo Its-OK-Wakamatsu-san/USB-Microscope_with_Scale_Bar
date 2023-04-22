@@ -64,14 +64,10 @@ It is good to change these values to fit your monitor or lens. <p>
   (1) "get Camera profile" command is not working properly.  So, force write camera size.
   ```
 ## Related materials
-  ```
-  (1) [Polarized light microscope]
-      (https://www.microscope.healthcare.nikon.com/products/polarizing-microscopes/eclipse-lv100n-pol)
-  (2) Field of View and Shooting Range of CCD Camera Adapter/Eyepiece for Microscope
-      https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/View-Range.htm?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp
-  (3) How to attach a C-mount camera to the eyepiece
-      https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/Join-Micro.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp
-  (4) USB Camera
-      https://www-trinity--lab-co-jp.translate.goog/IUC_cam/shiyou.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp
+ 
+  (1) [Polarized light microscope](https://www.microscope.healthcare.nikon.com/products/polarizing-microscopes/eclipse-lv100n-pol) <p>
+  (2) [Field of View and Shooting Range of CCD Camera Adapter/Eyepiece for Microscope](https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/View-Range.htm?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) <p>
+  (3) [How to attach a C-mount camera to the eyepiece](https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/Join-Micro.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) <p>
+  (4) [USB Camera](https://www-trinity--lab-co-jp.translate.goog/IUC_cam/shiyou.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) <p>
   (5) [Display OpenCV camera video on Canvas](https://imagingsolution-net.translate.goog/program/python/tkinter/display_opencv_video_canvas/?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
-   ```
+ 
