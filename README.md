@@ -20,7 +20,7 @@ The microscope cam software is created in Python to show scale in the image view
   (3) Image View: Pressing the “Play//Pause” button, change into Still or Live image. <p>
   (4) Focus: Adjust the focus of your microscope while looking at the Live image view. <p>
   (5) Exposure adjustment: Press the “Set Configuration” button. A function setting Pop Up Window appears. (Fig. 2 is our lab’s camera driver’s sample. Function is depend on your camera driver.) The exposure is set to Auto in the default. Auto-exposure images are not always good, and if they look slightly overexposed or underexposed, it's good to change the exposure manually to get a properly exposed image. <p>
-  (6) Scale-Bar and Objective Lens: When changed Objective Lens, select lens from “Objective Lens tab” to fit, and press “Objective Lens” button.
+  (6) Scale-Bar and Objective Lens: When changed Objective Lens, select lens from “Objective Lens tab” to fit, and press “Objective Lens” button. <p>
   (7) Scale-Bar location: Move Scale-Bar where to mouse click. <p>
   (8) Scale-Bar: Scale-Bar shows on/off, Scale-Bar length, Scale-Bar color, as you like. <p>
   (9) Save still image: Push the button “Save Image File” to save in jpg file. <p>
@@ -28,43 +28,30 @@ The microscope cam software is created in Python to show scale in the image view
   ![Driver](https://user-images.githubusercontent.com/131073488/233557365-10122650-103b-40a2-9279-da5d800b0f85.png) <p>
     Fig. 2　Camera profile setting window
 
-## Notes  
+#### Notes  
 You shall change these values to fit your camera.<p>
-  ```
-  (1) Camera spec. length(um)/pixel 	(4.2um/pixel written in program now.)
-  (2) Relay Lens magnification		(0.7 written in program now.)
-  ```
+  (1) Camera spec. length(um)/pixel 	(4.2um/pixel written in program now.) <p>
+  (2) Relay Lens magnification		(0.7 written in program now.) <p>
 It is good to change these values to fit your monitor or lens. <p>
-  ```
-  (1) Program window size:		   1200x650
-  (2) Image View window size:	    800x600
-  (3) Image View window size: 		Camera CMOS size:1/2
-  (4) Objective Lens magnification:	(selectable)
-  ```
+  (1) Program window size:		   1200x650 <p>
+  (2) Image View window size:	    800x600 <p>
+  (3) Image View window size: 		Camera CMOS size:1/2 <p>
+  (4) Objective Lens magnification:	(selectable) <p>
   
 ## Development Environment
-### Hardware Environment
-  ```
-  (1) Camera: 1/2inch color CMOS, 
-              1600x1200pixels, 
-              4.2um/pixel, 
-              10fps(max) (material(4))
-  (2) Relay Lens (Eyepiece): 0.7x (material(3))
-  (3) Objective Lens: 5x, 10x, 20x, 50x, 100x (material(1))
-  ```
-### Software Environment
-  ```
-  (1) OS: Windows10
-  (2) Python: Version 3.8.10
-  (3) Libraries: OpenCV, Pillow
-  (4) Regarding the display of video, referred to material(5)
-  ```
-## Known issue
-  ```
+#### Hardware Environment
+  (1) Camera: 1/2inch color CMOS,   1600x1200pixels,  4.2um/pixel,  10fps(max) (material(4)) <p>
+  (2) Relay Lens (Eyepiece): 0.7x (material(3)) <p>
+  (3) Objective Lens: 5x, 10x, 20x, 50x, 100x (material(1)) <p>
+#### Software Environment
+  (1) OS: Windows10 <p>
+  (2) Python: Version 3.8.10 <p>
+  (3) Libraries: OpenCV, Pillow <p>
+  (3) Libraries: OpenCV, Pillow <p>
+  (4) Regarding the display of video, referred to material(5) <p>
+#### Known issue
   (1) "get Camera profile" command is not working properly.  So, force write camera size.
-  ```
-## Related materials
- 
+#### Related material
   (1) [Polarized light microscope](https://www.microscope.healthcare.nikon.com/products/polarizing-microscopes/eclipse-lv100n-pol) <p>
   (2) [Field of View and Shooting Range of CCD Camera Adapter/Eyepiece for Microscope](https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/View-Range.htm?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) <p>
   (3) [How to attach a C-mount camera to the eyepiece](https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/Join-Micro.html?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp) <p>
