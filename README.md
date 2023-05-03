@@ -5,9 +5,9 @@ Fig.1　MicroScope_Cam_class101.py
 ## Overview
 The microscope cam software is created in Python to show scale in the image viewer. This document is its usage notes. <p>
 #### Function
-(1) Image View: Still or Live image is displayed at 1/2 scaled image viewer.<p>
-(2) Camera Selector: Select Webcam or Microscope cam. <p>
-(3) Camera setting: Change the exposure etc. using the driver provided by the camera manufacture. <p>
+1. Image View: Still or Live image is displayed at 1/2 scaled image viewer.
+2. Camera Selector: Select Webcam or Microscope cam. <p>
+3. Camera setting: Change the exposure etc. using the driver provided by the camera manufacture. <p>
 (4) Scale-Bar: Show and hide the Scale-Bar. <p>
 (5) Scale-Bar length: Change between 1um and 1000um to fit the objective lens magnification. <p>
 (6) Scale-Bar color: white, black, green, light blue, red <p>
