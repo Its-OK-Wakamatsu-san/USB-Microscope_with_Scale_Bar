@@ -32,9 +32,9 @@ You shall change these values to fit your camera.
   1. Camera spec. length(um)/pixel 	(4.2um/pixel written in program now.)
   2. Relay Lens magnification		(0.7 written in program now.)
 It is good to change these values to fit your monitor or lens.
-  1. Program window size:		   1200x650
+  1. Program window size:		   1350x690    (For FWXGA	1366×768 )
   2. Image View window size:	    800x600
-  3. Image View window size: 		Camera CMOS size:1/2
+  3. Image View window size: 		CMOS Camera Size:1/2
   4. Objective Lens magnification:	(selectable)
   
 ## Development Environment
@@ -48,7 +48,7 @@ It is good to change these values to fit your monitor or lens.
   3. Libraries: OpenCV, Pillow
   4. Regarding the display of video, referred to material(5)
 #### Known issue
-  1. "get Camera profile" command is not working properly.  So, force write camera size.
+  1. None
 #### Related material
   1. [Polarized light microscope](https://www.microscope.healthcare.nikon.com/products/polarizing-microscopes/eclipse-lv100n-pol)
   2. [Field of View and Shooting Range of CCD Camera Adapter/Eyepiece for Microscope](https://www-mecan-co-jp.translate.goog/microscope/Digital/USB/View-Range.htm?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja&_x_tr_pto=wapp)
