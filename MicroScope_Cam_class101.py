@@ -1,4 +1,4 @@
-# MicroScope CMOS Camera Viewer with Scale-Bar
+#MicroScope CMOS Camera Viewer with Scale-Bar
 import os
 import tkinter as tk
 from tkinter import ttk
@@ -15,11 +15,11 @@ class Application(tk.Frame):
         self.master.title("MicroScope CMOS Camera Viewer(NY-CZ=0.35-0.7倍Zoom経由)")       # Window title
         self.master.geometry("1350x690+0+0")             # TK window size(width x height & Left Top)
 
-        # Initialize view, camera
+        #Initialize view, camera
         self.view_width  = 800
         self.view_height = 600
         self.view_magnify  = 1/2  # Camera to Picture ratio 2:1   
-        self.camera_id   = 1      # 0=PC_Cam   1=External_USB_Cam
+        self.camera_id   = 0      # 0=PC_Cam   1=External_USB_Cam
         self.frame_rate  = 10
         self.disp_id = None         #for picture animation
 
@@ -30,21 +30,23 @@ class Application(tk.Frame):
         self.canvas.bind('<Button-1>', self.canvas_click)
         self.canvas.pack(expand = True, fill = tk.BOTH)
 
-        # Default save file
+        #Default save file
         file_name1 = "Capture.jpg"
         self.typelist1 = [("Capture.jpg", ".jpg"),]        
-        self.ini_dir = os.path.dirname(__file__)        # get present program directory
+        #self.ini_dir = os.path.dirname(__file__)        # get present program directory
+        self.ini_dir =r'C:\Users\taniyama\Desktop'
         self.file_path = os.path.join(self.ini_dir, file_name1)
         #print (self.file_path)
         self.count   = 0
 
         # Initialize show scale profile
-        self.show_scale  = True   # True= Show Scale    , False= Hide Scale 
-        self.relaylens_magnify =0.7  # Zoom lens x0.35 -> x0.70
-        self.lens_magnify   = 10.0   # Objective Lens x10 Default
-        self.str_length = '100um'
-        self.length = 100.0          # Scale length 
-        self.pixel_length = 4.2      # 4.2um/Pixel
+        self.show_scale  = True         # True= Show Scale    , False= Hide Scale 
+        self.relaylens_magnify =0.7     # Zoom lens x0.35 -> x0.70
+        self.str_lens_magnify = 'x10'   # Objective Lens x10 Default
+        self.lens_magnify   = 10.0      # Objective Lens x10 Default
+        self.str_length = '100um'       # Scale length
+        self.length = 100.0             # Scale length 
+        self.pixel_length = 4.2         # 4.2um/Pixel
         self.x0  = 150
         self.y0  = 50
 
@@ -59,22 +61,23 @@ class Application(tk.Frame):
         self.green = (0,255,0)
         self.black = (0,0,0)
         self.color = self.white
+        self.str_color = 'white'
 
         # frame1
         frame1 = tk.Frame(root, bd=2, pady=5, padx=5)
         frame1.pack(side=tk.RIGHT,expand=True,anchor=tk.NE)
-        # camera operation
+        #camera operation
         self.btn_live = tk.Button(frame1, text='Play//Pause', command=self.btn_click, width=10, height=2, background=self.color_green)
         self.btn_live.grid(row=0, column=0, padx=5, pady=5)
         btn_exit = tk.Button(frame1, text='Exit', command=root.quit, width=10, height=2)
         btn_exit.grid(row=0, column=1, padx=5, pady=5)
-        column_0 = ('0', '1')
+        column_0 = ('0', '1', '2')
         btn_camera = tk.Button(frame1, text='Change Camera', command=self.Set_Camera(), width=15, height=2) # run in advance
         btn_camera.grid(row=1, column=0, padx=5, pady=5)
         self.combobox_0 = ttk.Combobox(frame1, height=1, width=10, justify='center', values=column_0)
-        self.combobox_0.insert(0, '1')
+        self.combobox_0.insert(0, '0')
         self.combobox_0.grid(row=1, column=1, padx=5, pady=5)
-        # Save picture
+        #Save picture
         label_save_filename = tk.Label(frame1, text='show Save File name.')
         label_save_filename.grid(row=2, column=0, padx=5, pady=5)
         self.save_filename = tk.Text(frame1,  height=4,width=25)
@@ -84,30 +87,30 @@ class Application(tk.Frame):
         btn_Set_Plot1.grid(row=4, column=0, padx=5, pady=5)  
         self.btn_save = tk.Button(frame1, text='Save Image File', command=self.Caputure_Image, width=15, height=2)
         self.btn_save.grid(row=5, column=0, padx=5, pady=5)
-        # Show scale
+        #Show scale
         btn_scale = tk.Button(frame1, text='Scale on/off', command=self.Show_Scale, width=15, height=1)
         btn_scale.grid(row=6, column=0, padx=5, pady=5)
         column_1 = ('x5', 'x10', 'x20', 'x50', 'x100')
         btn_Lens = tk.Button(frame1, text='Set Objective Lens', command=self.Set_Objective_Lens, width=15, height=1)
         btn_Lens.grid(row=7, column=0, padx=5, pady=5)
         self.combobox_1 = ttk.Combobox(frame1, height=1, width=10, justify='center', values=column_1)
-        self.combobox_1.insert(0, 'X10')
+        self.combobox_1.insert(0, self.str_lens_magnify)
         self.combobox_1.grid(row=7, column=1, padx=5, pady=5)
         column_2 = ('10um', '20um', '50um', '100um', '200um','500um','1000um')
         btn_Length = tk.Button(frame1, text='Set Length', command=self.Set_Length, width=15,height=1)
         btn_Length.grid(row=8, column=0, padx=5, pady=5)
         self.combobox_2 = ttk.Combobox(frame1, height=1, width=10, justify='center', values=column_2)
-        self.combobox_2.insert(0, '100um')
+        self.combobox_2.insert(0, self.str_length )
         self.combobox_2.grid(row=8, column=1, padx=5, pady=5)
         column_3 = ('white', 'green', 'aqua', 'black', 'red')
         btn_Length = tk.Button(frame1, text='Set Color', command=self.Set_Color, width=15,height=1)
         btn_Length.grid(row=9, column=0, padx=5, pady=5)
         self.combobox_3 = ttk.Combobox(frame1, height=1, width=10, justify='center', values=column_3)
-        self.combobox_3.insert(0, 'white')
+        self.combobox_3.insert(0, self.str_color)
         self.combobox_3.grid(row=9, column=1, padx=5, pady=5)
         btn_Config = tk.Button(frame1, text='Set Configration', command=self.Set_Config, width=15,height=2, background=self.color_green)
         btn_Config.grid(row=10, column=0, padx=5, pady=5)
-        # mouse click event
+        #mouse click event
         label_start_x = tk.Label(frame1, text='mouse_pos_x')
         label_start_x.grid(row=11, column=0)
         label_start_y = tk.Label(frame1, text='mouse_pos_y')
@@ -125,7 +128,7 @@ class Application(tk.Frame):
         label_save_filename.grid(row=14, column=0, padx=5, pady=5)
 
     def canvas_click(self, event):
-        # Canvas mouse click event
+        '''Canvas mouse click event'''
         self.x0 = int(event.x / self.view_magnify)
         self.y0 = int(event.y / self.view_magnify)
         self.en_x0.delete(0,'end')
@@ -135,7 +138,7 @@ class Application(tk.Frame):
         return
 
     def btn_click(self):
-        # Play//Pause button
+        '''Play//Pause button '''
 
         if self.disp_id is None:
             # 動画を表示
@@ -152,12 +155,13 @@ class Application(tk.Frame):
 
     def disp_image(self):
         '''Show image on Canvas'''
-        # make image method
+
+        # make image
         self.make_image()
 
         # canvas size
-        # canvas_width = self.canvas.winfo_width()
-        # canvas_height = self.canvas.winfo_height()
+        #canvas_width = self.canvas.winfo_width()
+        #canvas_height = self.canvas.winfo_height()
         canvas_width = self.view_x
         canvas_height = self.view_y      
 
@@ -167,7 +171,7 @@ class Application(tk.Frame):
         # change PIL.Image to PhotoImage
         self.photo_image = ImageTk.PhotoImage(image=pil_image)
 
-        # canvas image
+        # canva image
         self.canvas.create_image(
                 canvas_width / 2,       # location X&Y(Center of Canvas)
                 canvas_height / 2,                   
@@ -202,23 +206,23 @@ class Application(tk.Frame):
 
         # BGR→RGB 
         #cv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        if   frame.ndim == 2:  # mono
+        if frame.ndim == 2:  # mono
             cv_image = frame
-        if   frame.shape[2] == 1:  # mono (8bit)
+        if frame.shape[2] == 1:  # mono (8bit)
             cv_image = frame
         elif frame.shape[2] == 3:  # Color(24bit)
             cv_image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         elif frame.shape[2] == 4:  # Color with Transparent(32bit)
             cv_image = cv2.cvtColor(frame, cv2.COLOR_BGRA2RGBA)
-
+        
         pil_image = Image.fromarray(cv_image)
         self.pil_image = pil_image
         return
     
     def Set_File_Path(self):
-        # 20221108 add defaultextension = ""  ....automatically add extension
+        #20221108 add defaultextension = ""  ....automatically add extension
         filename=filedialog.asksaveasfilename(initialdir=self.ini_dir, filetypes=self.typelist1, title="Set File_path", defaultextension = "")
-        if filename == ""   :
+        if filename == "":
             return
         else:
             self.file_path = filename
@@ -240,12 +244,12 @@ class Application(tk.Frame):
                 
     def Set_Camera(self):
         try:                                                # button color changed
-            self.btn_live.configure(bg = self.color_green)  # live button color changed
-            self.btn_save.configure(bg = self.color_gray)   # save button color changed
-            self.camera_id = int(self.combobox_0.get())     # camera_id
+            self.btn_live.configure(bg = self.color_green)   # live button color changed
+            self.btn_save.configure(bg = self.color_gray)    # save button color changed
+            self.camera_id = int(self.combobox_0.get())       # camera_id
         except:
             pass
-        # Change Camera and Pause Camera 
+        # Pause Camera and Change Camera
         if self.disp_id is None:
             pass
         else:
@@ -279,7 +283,7 @@ class Application(tk.Frame):
             self.view_x = int(1600 * self.view_magnify)
             self.view_y = int(1200 * self.view_magnify)
 
-        if self.view_y == 0.0:                                  # Avoid zero divide
+        if self.view_y == 0.0:
             aspect_ratio = self.view_width / self.view_height
         else:
             aspect_ratio = self.view_x / self.view_y
@@ -295,54 +299,23 @@ class Application(tk.Frame):
 
     def Set_Objective_Lens(self):
         name = self.combobox_1.get()
-        if   name == 'x5'  :
-            self.lens_magnify =   5.0
-        elif name == 'x10' :
-            self.lens_magnify =  10.0
-        elif name == 'x20' :
-            self.lens_magnify =  20.0
-        elif name == 'x50' :
-            self.lens_magnify =  50.0
-        elif name == 'x100':
-            self.lens_magnify = 100.0
-        else:
-            pass
+        dictionary = {'x5':5.0, 'x10':10.0, 'x20':20.0, 'x50':50.0, 'x100':100.0}
+        self.str_lens_magnify = name
+        self.lens_magnify = dictionary[name]
         return
             
     def Set_Length(self):
-        self.str_length = self.combobox_2.get()
-        if   self.str_length == '10um':
-            self.length =  10.0
-        elif self.str_length == '20um':
-            self.length =  20.0
-        elif self.str_length == '50um':
-            self.length =  50.0
-        elif self.str_length == '100um':
-            self.length =  100.0
-        elif self.str_length == '200um':
-            self.length = 200.0
-        elif self.str_length == '500um':
-            self.length = 500.0
-        elif self.str_length == '1000um':
-            self.length = 1000.0
-        else:
-            pass
+        name = self.combobox_2.get()
+        dictionary = {'10um':10.0, '20um':20.0, '50um':50.0, '100um':100.0, '200um':200.0,'500um':500.0,'1000um':1000.0}
+        self.str_length = name
+        self.length = dictionary[name]
         return
 
     def Set_Color(self):
         name = self.combobox_3.get()
-        if   name == 'white':
-            self.color =   self.white
-        elif name == 'black':
-            self.color =   self.black
-        elif name == 'green':
-            self.color =   self.green
-        elif name == 'aqua':
-            self.color =   self.aqua
-        elif name == 'red':
-            self.color =   self.red 
-        else:
-            pass
+        dictionary = {'white':self.white, 'green':self.green, 'aqua':self.aqua, 'black':self.black, 'red':self.red }
+        self.str_color = name
+        self.color = dictionary[name]        
         return
         
     def Set_Config(self):
